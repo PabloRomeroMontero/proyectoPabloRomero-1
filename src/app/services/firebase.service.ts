@@ -41,7 +41,7 @@ export class FirebaseService {
       email: usuario.email,
       password: usuario.password,
       returnSecureToken: true
-    }
+    };
 
     return this.http.post(
       `${this.url}:signInWithPassword?key=${this.apiKey}`, authData

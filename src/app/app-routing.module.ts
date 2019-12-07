@@ -13,7 +13,7 @@ routes = [
   {  component: BuscarComponent, path: 'buscar/:id'},
   {  component: LoginComponent, path: 'login'},
   {  component: RegistrarComponent, path: 'registrar'},
-  {  component: HomeComponent, path: '**', canActivate: []},
+  {  component: HomeComponent, path: '**', canActivate: []}
 ];
 
 @NgModule({

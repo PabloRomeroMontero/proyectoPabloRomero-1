@@ -14,6 +14,8 @@ import {CreateEditComponent} from './components/create-edit/create-edit.componen
 import {NewsService} from './services/news.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import {FirebaseService} from './services/firebase.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import {RouterModule} from '@angular/router';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    HttpClientModule
   ],
-  providers: [NewsService],
+  providers: [NewsService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

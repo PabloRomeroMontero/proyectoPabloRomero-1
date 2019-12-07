@@ -18,8 +18,8 @@ export class RegistrarComponent implements OnInit {
 
   ngOnInit() {
     this.signUpForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['hi@hi.com', Validators.required],
+      password: ['hihihi', Validators.required]
     });
   }
 
@@ -36,10 +36,18 @@ export class RegistrarComponent implements OnInit {
   signUp() {
     console.log(this.signUpForm.value);
     this.isSubmitted = true;
-    if (this.signUpForm.invalid) {
-      return;
-    }
-    this.firebase.nuevoUsuario(this.signUpForm.value);
+    // if (this.signUpForm.invalid) {
+    //   return;
+    // }
+    this.firebase.nuevoUsuario({
+      email: this.signUpForm.value.email,
+      password: this.signUpForm.value.password,
+      returnSecureToken: true
+    }).subscribe((response) => {
+      console.log(response);
+    }, (err) => {
+      console.log(err);
+    });
     this.route.navigate(['/home']);
   }
 }
