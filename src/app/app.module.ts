@@ -13,6 +13,7 @@ import {BuscarComponent} from './components/buscar/buscar.component';
 import {CreateEditComponent} from './components/create-edit/create-edit.component';
 import {NewsService} from './services/news.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]
