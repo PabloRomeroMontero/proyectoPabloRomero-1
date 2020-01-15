@@ -9,12 +9,12 @@ import {AuthGuard} from './guards/auth.guard';
 
 let routes: Routes;
 routes = [
+  {  component: HomeComponent, path: '', canActivate: [AuthGuard]},
   {  component: HomeComponent, path: 'home', canActivate: [AuthGuard]},
   {  component: DetailComponent, path: 'detail/:id', canActivate: [AuthGuard]},
   {  component: BuscarComponent, path: 'buscar/:id'},
   {  component: LoginComponent, path: 'login'},
-  {  component: RegistrarComponent, path: 'registrar'},
-  {  component: HomeComponent, path: '**', canActivate: [AuthGuard]}
+  {  component: RegistrarComponent, path: 'registrar'}
 ];
 
 @NgModule({
